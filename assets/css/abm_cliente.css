@@ -1,0 +1,24 @@
+.table {
+    padding: 30px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--color-fondo-formulario);
+    text-align: left;
+
+    border: none;
+}
+
+.usuario {
+    height: 72px;
+}
+
+.usuario__img-container {
+    height: 64px;
+    width: 64px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.usuario__img-container img {
+    height: 100%;
+}

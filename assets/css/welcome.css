@@ -1,0 +1,7 @@
+main {
+    background-image: url('https://dji-official-fe.djicdn.com/cms/uploads/6380ad4dd75bf6ffaf1687363362a4de@1x.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    min-height: calc(100vh - 64px);
+}

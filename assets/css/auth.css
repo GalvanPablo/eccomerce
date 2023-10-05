@@ -1,0 +1,72 @@
+body {
+    background-image: url('https://account.djicdn.com/img/banner-04.5cd6cc8d.webp');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main {
+    margin: 0 auto;
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+}
+
+.form__container {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: var(--color-fondo-formulario);
+
+    max-width: 416px;
+    width: 416px;
+    box-shadow: 0 16px 32px rgba(0,0,0,.1);
+}
+
+.form__inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form__group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form__group label {
+    font-size: 0.875rem;
+}
+
+.form__input__container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: white;
+
+    padding: 5px 10px;
+    border: 1px solid black;
+    border-radius: 0.2rem;
+}
+
+.form__input{
+    width: 100%;
+    border: none;
+    outline: none;
+    height: 25px;
+    background-color: rebeccapurple;
+}
+
+#passwd_visibility {
+    color: gray;
+    cursor: pointer;
+}
+
+.form__container button {
+    padding: 5px 10px;
+    width: 100%;
+    cursor: pointer;
+}
