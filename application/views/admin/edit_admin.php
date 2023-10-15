@@ -6,7 +6,6 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="<?= base_url('assets\css\base.css')?>">
-    <link rel="stylesheet" href="<?= base_url('assets\css\abm_producto.css')?>">
 </head>
 <body>
     <header class="header">
@@ -38,7 +37,6 @@
                     <div class="profile__option">
                         <a href="#" class="profile__btn-option">
                             <i class="fa-solid fa-user-pen"></i>
-                            <!-- <i class="fa-regular fa-user"></i> -->
                             <span>Editar perfil</span>
                         </a>
                     </div>
@@ -54,51 +52,7 @@
 	</header>
     <main>
         <div class="container">
-            <h2>Productos</h2>
-            <div>
-                <a href="<?=base_url('admin/new_product')?>">Nuevo producto</a>
-            </div>
-            <?php if(!is_null($productos) && is_array($productos) &&  !empty($productos)): ?>
-                <table class="table">
-                    <thead> <!-- Encabezado de la tabla -->
-                        <tr>
-                            <th>ID</th>
-                            <th>Imagen</th>
-                            <th>Nombre</th>
-                            <th>Descripcion</th>
-                            <th>Precio</th>
-                            <th>Stock</th>
-                            <th>Destacado</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody> <!-- Cuerpo de la tabla -->
-                        <?php foreach ($productos as $producto): ?>
-                            <tr class="producto">
-                                <td class="producto__id"><?= $producto->producto_id ?></td>
-                                <td class="producto__img">
-                                    <div class="producto__img-container">
-                                        <img src="<?= $producto->url_imagen ?>" alt="<?= "producto_" . $producto->producto_id ?>">
-                                    </div>
-                                </td>
-                                <td class="producto__nombre"><?= $producto->nombre ?></td>
-                                <td class="producto__descripcion"><?= nl2br($producto->descripcion) ?></td>
-                                <td class="producto__precio">$ <?= number_format($producto->precio, 2, ',', '.') ?></td>
-                                <td class="producto__stock"><?= $producto->stock ?></td>
-                                <td class="producto__destacado">
-                                    <a href="<?=base_url('admin/highlight_product/' . $producto->producto_id)?>"><i class="<?= $producto->destacado ? 'fa-solid fa-star' : 'fa-regular fa-star' ?>"></i></a>
-                                </td>
-                                <td>
-                                    <a href="<?=base_url('admin/product/' . $producto->producto_id)?>" title="Editar"><i class="fa-solid fa-pen"></i></a>
-                                    <span onclick="delete_product(<?=$producto->producto_id?>)" title="Dar de baja"><i class="fa-solid fa-trash"></i></span>
-                                </td>
-                            </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
-            <?php else: ?>
-                <h3>No hay pructos</h3>
-            <?php endif; ?>
+            <h2>Editar perfil de usuario</h2>
         </div>
     </main>
     <footer>
@@ -120,13 +74,11 @@
                 menu_profile.classList.add('profile__menu--oculto');
             }
         });
-
-        const delete_product = (id) => {
-            const result = window.confirm('¿Estas seguro de querer dar de baja el producto ID ' + id + '?\nNo habrá marcha atrás!');
-            if(result){
-                window.location.href = "<?=base_url('admin/delete_product/')?>" + id;
-            }
-        }
+        
+        // Evita que los clics en el menú de perfil lo cierren inmediatamente
+        // menu_profile.addEventListener('click', function(event) {
+        //     event.stopPropagation();
+        // });
     </script>
 </body>
 </html>

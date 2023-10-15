@@ -6,7 +6,7 @@ class Client_model extends CI_Model {
 
     public function insert($cliente){
         $cliente['rol_rol_id'] = 2;
-        $cliente['contraseña'] = password_hash('usuario123',PASSWORD_BCRYPT);
+        $cliente['contraseña'] = password_hash($cliente['dni'], PASSWORD_BCRYPT);
         $this->db->insert('usuario', $cliente);
     }
 
@@ -24,7 +24,7 @@ class Client_model extends CI_Model {
     }
 
     public function reset_passwd($id){
-        $cliente['contraseña'] = password_hash('usuario123',PASSWORD_BCRYPT);
+        $cliente['contraseña'] = password_hash($this->get($id)->dni, PASSWORD_BCRYPT);
         
         $this->db->where('usuario_id', $id);
         $this->db->update('usuario', $cliente);

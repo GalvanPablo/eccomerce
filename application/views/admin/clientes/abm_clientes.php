@@ -62,10 +62,11 @@
                 <table class="table">
                     <thead> <!-- Encabezado de la tabla -->
                         <tr>
-                            <th>ID</th>
+                            <!-- <th>ID</th> -->
                             <th>Foto</th>
                             <th>Nombre</th>
                             <th>Apellido</th>
+                            <th>DNI</th>
                             <th>Email</th>
                             <th>Acciones</th>
                         </tr>
@@ -73,7 +74,7 @@
                     <tbody> <!-- Cuerpo de la tabla -->
                         <?php foreach ($clientes as $cliente): ?>
                             <tr class="usuario">
-                                <td class="usuario_id"><?= $cliente->usuario_id ?></td>
+                                <!-- <td class="usuario_id"><?= $cliente->usuario_id ?></td> -->
                                 <td class="usuario__img">
                                     <div class="usuario__img-container">
                                         <img src="<?= $cliente->url_foto ?>" alt="<?= "usuario_" . $cliente->usuario_id ?>">
@@ -81,6 +82,7 @@
                                 </td>
                                 <td class="usuario__nombre"><?= $cliente->nombre ?></td>
                                 <td class="usuario__apellido"><?= $cliente->apellido ?></td>
+                                <td class="usuario__dni"><?= $cliente->dni ?></td>
                                 <td class="usuario__mail"><?= $cliente->mail ?></td>
                                 <td>
                                     <a href="<?=base_url('admin/client/' . $cliente->usuario_id)?>" title="Editar"><i class="fa-solid fa-pen"></i></a>

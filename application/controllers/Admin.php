@@ -16,6 +16,13 @@ class Admin extends CI_Controller {
         $this->load->view('admin\admin.php');
     }
 
+    public function edit_profile(){
+        $this->load->view('admin\edit_admin.php');
+    }
+
+
+    ///////////////////////////////////////////////////////
+
     public function clients(){
         $this->load->model('Client_model');
 
@@ -43,6 +50,7 @@ class Admin extends CI_Controller {
     public function insert_client(){
         $this->load->model('Client_model');
 
+        $cliente['dni'] = $this->input->post('cliente_dni');
         $cliente['nombre'] = $this->input->post('cliente_nombre');
         $cliente['apellido'] = $this->input->post('cliente_apellido');
         $cliente['mail'] = $this->input->post('cliente_email');
@@ -113,6 +121,7 @@ class Admin extends CI_Controller {
         $producto['nombre'] = $this->input->post('producto_nombre');
         $producto['descripcion'] = $this->input->post('producto_descripcion');
         $producto['precio'] = $this->input->post('producto_precio');
+        $producto['destacado'] = $this->input->post('producto_destacado');
         $producto['stock'] = $this->input->post('producto_stock');
         $producto['url_imagen'] = $this->input->post('producto_img');
         
@@ -128,6 +137,14 @@ class Admin extends CI_Controller {
         $producto['precio'] = $this->input->post('producto_precio');
         $producto['stock'] = $this->input->post('producto_stock');
         $producto['url_imagen'] = $this->input->post('producto_img');
+
+        $this->Product_model->update($id, $producto);
+        redirect('admin/products');
+    }
+
+    public function highlight_product($id) {
+        $this->load->model('Product_model');
+        $producto['destacado'] = !$this->Product_model->get($id)->destacado;
 
         $this->Product_model->update($id, $producto);
         redirect('admin/products');

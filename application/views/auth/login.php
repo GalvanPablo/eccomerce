@@ -7,21 +7,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Welcome</title>
+    <title>Iniciar sesión</title>
 
     <link rel="stylesheet" href="<?= base_url('assets\css\base.css')?>">
     <link rel="stylesheet" href="<?= base_url('assets\css\auth.css')?>">
 </head>
 <body>
-    <!-- <header>
-        <div class="header__container">
-            <nav class="navbar">
-                <a href="<?=base_url()?>">
-                    <h1>E-Store</h1>
-                </a>
-            </nav>
-        </div>
-    </header> -->
     <main>
         <?php echo form_open('auth/iniciar_sesion'); ?>
             <div class="form__container">

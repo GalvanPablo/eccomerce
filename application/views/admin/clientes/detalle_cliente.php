@@ -67,21 +67,44 @@
                     </div>
                 <?php endif; ?>
                 <div>
+                    <label for="cliente_dni">DNI</label>
+                    <input type="text" name="cliente_dni" id="cliente_dni"
+                        value="<?= $cliente ? $cliente->dni : ''?>"
+                        maxlength="10"
+                        required 
+                    >
+                </div>
+                <div>
                     <label for="cliente_nombre">Nombre</label>
-                    <input type="text" name="cliente_nombre" id="cliente_nombre" value="<?= $cliente ? $cliente->nombre : ''?>">
+                    <input type="text" name="cliente_nombre" id="cliente_nombre" 
+                        value="<?= $cliente ? $cliente->nombre : ''?>"
+                        maxlength="45"
+                        required
+                    >
                 </div>
                 <div>
                     <label for="cliente_apellido">Apellido</label>
-                    <input type="text" name="cliente_apellido" id="cliente_apellido" value="<?= $cliente ? $cliente->apellido : ''?>">
+                    <input type="text" name="cliente_apellido" id="cliente_apellido"
+                        value="<?= $cliente ? $cliente->apellido : ''?>"
+                        maxlength="45"
+                        required
+                    >
                 </div>
                 <div>
                     <label for="cliente_email">Email</label>
-                    <input type="text" name="cliente_email" id="cliente_email" value="<?= $cliente ? $cliente->mail : ''?>">
+                    <input type="text" name="cliente_email" id="cliente_email"
+                        value="<?= $cliente ? $cliente->mail : ''?>"
+                        maxlength="255"
+                        required
+                    >
                 </div>
 
                 <div>
                     <label for="cliente_foto">Foto</label>
-                    <input type="text" name="cliente_foto" id="cliente_foto" value="<?= $cliente ? $cliente->url_foto : ''?>">
+                    <input type="text" name="cliente_foto" id="cliente_foto"
+                        value="<?= $cliente ? $cliente->url_foto : ''?>"
+                        maxlength="255"
+                    >
                 </div>
 
                 <button type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>

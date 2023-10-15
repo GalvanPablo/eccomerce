@@ -48,7 +48,7 @@ main {
     background-color: white;
 
     padding: 5px 10px;
-    border: 1px solid black;
+    border: 1px solid;
     border-radius: 0.2rem;
 }
 
@@ -57,7 +57,7 @@ main {
     border: none;
     outline: none;
     height: 25px;
-    background-color: rebeccapurple;
+    background-color: white;
 }
 
 #passwd_visibility {

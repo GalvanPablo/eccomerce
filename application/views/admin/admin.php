@@ -35,9 +35,8 @@
                     </div>
 
                     <div class="profile__option">
-                        <a href="#" class="profile__btn-option">
+                        <a href="<?=base_url('admin/edit_profile')?>" class="profile__btn-option">
                             <i class="fa-solid fa-user-pen"></i>
-                            <!-- <i class="fa-regular fa-user"></i> -->
                             <span>Editar perfil</span>
                         </a>
                     </div>

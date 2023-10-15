@@ -9,9 +9,6 @@ class Auth_model extends CI_Model {
         $this->db->from('usuario');
         $this->db->where('mail', $mail);
 
-        // admin - 123 - $2y$10$Z/rBlJgr0GgaRjJp/p3Bn.s/RPwwnwA3Lo4WUIhVIuFkWliPZgimq
-        // user - 456 - $2y$10$ah7BqgJG6LsXtbhHyZALVemlcqf6rq9QT2olULXW3n/Na/8/UCdzm
-
         $user = $this->db->get()->result();
         if($user != null){
             if(password_verify($pass, $user[0]->contraseña)){
@@ -22,5 +19,13 @@ class Auth_model extends CI_Model {
             echo "<script>alert('El usuario no existe')</script>";
         }
         return null;
+    }
+
+
+    public function register($usuario){
+        $usuario['rol_rol_id'] = 2; // Cliente
+        $this->db->insert('usuario', $usuario);
+
+        return $this->db->affected_rows() > 0;
     }
 }

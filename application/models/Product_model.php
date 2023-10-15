@@ -36,4 +36,13 @@ class Product_model extends CI_Model {
         
         return $this->db->get()->result();
     }
+
+    public function get_all_highlights(){
+        $this->db->select('*');
+        $this->db->from('producto');
+        $this->db->where('baja', 0);
+        $this->db->where('destacado', 1);
+        
+        return $this->db->get()->result();
+    }
 }

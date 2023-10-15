@@ -51,7 +51,27 @@
 	</header>
     <main>
         <div class="container">
-            
+            <h2>Productos destacados</h2>
+            <h3><?=$this->session->userdata('recien_registrado')?></h3>
+            <?php foreach ($productos_destacados as $producto_destacado): ?>
+                <p><?=$producto_destacado->nombre?></p>
+            <?php endforeach; ?>
+        </div>
+
+        <div class="popUp" id="popUp_register">
+            <div class="popUp__contenido">
+                <div class="popUp__title">
+                    <h2>¡Gracias por registrarte!</h2>
+                    <div onclick="close_PopUp_register()" class="popUp__cerrar">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+                <div class="popUp__mensaje">
+                    <p>Estamos encantados de darte la bienvenida a nuestra comunidad. Tu registro ha sido exitoso y estamos emocionados de tenerte como parte de nuestra plataforma.</p>
+                    <p>¡Esperamos que disfrutes de tu experiencia en nuestro sitio y que encuentres todo lo que estás buscando!</p>
+                    <p>¡Bienvenido de nuevo y gracias por unirte a nosotros!"</p>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
@@ -62,17 +82,29 @@
         const menu_profile = document.getElementById('menu_profile');
         const btn_profile = document.getElementById('btn_profile');
 
-        // Función para alternar la visibilidad del menú de perfil
         const viewProfile = () => {
             menu_profile.classList.toggle('profile__menu--oculto');
         };
 
-        // Event listener para cerrar el menú de perfil si se hace clic en cualquier parte fuera de él
         document.addEventListener('click', function(event) {
             if (event.target !== menu_profile && event.target !== btn_profile && !btn_profile.contains(event.target)) {
                 menu_profile.classList.add('profile__menu--oculto');
             }
+
+            if (event.target === popUp_register) {
+                popUp_register.style.display = 'none';
+            }
         });
+
+        const popUp_register = document.getElementById('popUp_register');
+        if('<?=$this->session->userdata('recien_registrado')?>' === '1'){
+            popUp_register.style.display = 'block';
+            <?= $this->session->set_userdata('recien_registrado', false)?>
+        }
+
+        const close_PopUp_register = () => {
+            popUp_register.style.display = 'none';
+        }
     </script>
 </body>
 </html>
