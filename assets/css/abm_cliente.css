@@ -8,6 +8,15 @@
     border: none;
 }
 
+.cliente__nuevo {
+    background-color: var(--color-fondo-formulario);
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 10px 0;
+    align-self: center;
+}
+
 .usuario {
     height: 72px;
 }
@@ -21,4 +30,14 @@
 
 .usuario__img-container img {
     height: 100%;
+}
+
+.usuario__action {
+    margin: 0 5px;
+    cursor: pointer;
+    color: var(--color-texto);
+}
+
+.usuario__action:hover {
+    color: var(--color-secundario);
 }

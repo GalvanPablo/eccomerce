@@ -8,6 +8,15 @@
     border: none;
 }
 
+.producto__nuevo {
+    background-color: var(--color-fondo-formulario);
+    padding: 5px 10px;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 10px 0;
+    align-self: center;
+}
+
 .producto {
     height: 72px;
 }
@@ -21,4 +30,9 @@
 
 .producto__img-container img {
     height: 100%;
+}
+
+.producto__action {
+    margin: 0 5px;
+    cursor: pointer;
 }

@@ -2,7 +2,7 @@
 
 :root {
     --color-primario: #70ABAF;
-    --color-secundario: #333333;
+    --color-secundario: #666666;
     --color-fondo: #FAFAFA;
 
     --color-texto: #0C120C;
@@ -12,11 +12,12 @@
 
     /* --color-sombra: #000000; */
 
-    /* --color-exito: #00CC99; */
-    /* --color-advertencia: #FFEE88; */
-    /* --color-error: #D62828; */
-    /* --color-info: #4361EE; */
-    /* --color-destacado: #9381FF; */
+    --color-exito: #00CC99;
+    --color-advertencia: #FFEE88;
+    --color-error: #D62828;
+    --color-info: #4361EE;
+    --color-destacado: #9381FF;
+    --color-neutral: #CACACA;
 
     --color-fondo-encabezado: #FFFFFF;
     /* --color-texto-encabezado: #000000; */
@@ -52,7 +53,6 @@ ul {
     max-width: calc(100vw - (160px)*2);
     margin: 0 auto;
     width: 100%;
-
 }
 
 .header {
@@ -135,6 +135,7 @@ ul {
     background-color: var(--color-fondo-encabezado);
     padding: 10px;
     border-radius: 5px;
+    box-shadow: 0px 10px 22px 0px rgba(0,0,0,0.1);
 }
 
 .profile__menu--oculto {
@@ -228,10 +229,43 @@ ul {
     font-size: 28px;
 }
 
+.popUp__actions {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.popUp__action {
+    padding: 3px 10px;
+    /* font-size: 0.925rem; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+
+    background-color: var(--color-neutral);
+    border-radius: 5px;
+    border: 1px solid var(--color-fondo-encabezado);
+}
+
+#popUp_save i{
+    color: var(--color-exito);
+}
+
+#popUp_cancel i{
+    color: var(--color-error);
+}
+
+
+
 
 
 
 
 body {
-    background-color: #70ABAF;
+    background: var(--color-primario);
+    background-attachment: fixed;
 }

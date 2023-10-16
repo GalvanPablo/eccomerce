@@ -55,8 +55,8 @@
     <main>
         <div class="container">
             <h2>Clientes</h2>
-            <div>
-                <a href="<?=base_url('admin/new_client')?>">Nuevo cliente</a>
+            <div class="cliente__nuevo">
+                <a href="<?=base_url('admin/new_client')?>"><i class="fa-solid fa-plus"></i><span> Nuevo cliente</span></a>
             </div>
             <?php if(!is_null($clientes) && is_array($clientes) &&  !empty($clientes)): ?>
                 <table class="table">
@@ -77,17 +77,17 @@
                                 <!-- <td class="usuario_id"><?= $cliente->usuario_id ?></td> -->
                                 <td class="usuario__img">
                                     <div class="usuario__img-container">
-                                        <img src="<?= $cliente->url_foto ?>" alt="<?= "usuario_" . $cliente->usuario_id ?>">
+                                        <img src="<?= $cliente->url_foto ? $cliente->url_foto : base_url('assets\img\avatar.png') ?>" alt="<?= "usuario_" . $cliente->usuario_id ?>">
                                     </div>
                                 </td>
                                 <td class="usuario__nombre"><?= $cliente->nombre ?></td>
                                 <td class="usuario__apellido"><?= $cliente->apellido ?></td>
                                 <td class="usuario__dni"><?= $cliente->dni ?></td>
                                 <td class="usuario__mail"><?= $cliente->mail ?></td>
-                                <td>
-                                    <a href="<?=base_url('admin/client/' . $cliente->usuario_id)?>" title="Editar"><i class="fa-solid fa-pen"></i></a>
-                                    <span onclick="reset_passwd(<?=$cliente->usuario_id?>,'<?=$cliente->nombre?>','<?=$cliente->apellido?>')"><i class="fa-solid fa-key"></i></span>
-                                    <span onclick="delete_client(<?=$cliente->usuario_id?>,'<?=$cliente->nombre?>','<?=$cliente->apellido?>')" title="Dar de baja"><i class="fa-solid fa-trash"></i></span>
+                                <td class="usuario__actions">
+                                    <a href="<?=base_url('admin/client/' . $cliente->usuario_id)?>" title="Editar" class="usuario__action"><i class="fa-solid fa-pen"></i></a>
+                                    <span onclick="reset_passwd(<?=$cliente->usuario_id?>,'<?=$cliente->nombre?>','<?=$cliente->apellido?>')" class="usuario__action"><i class="fa-solid fa-key"></i></span>
+                                    <span onclick="delete_client(<?=$cliente->usuario_id?>,'<?=$cliente->nombre?>','<?=$cliente->apellido?>')" title="Dar de baja" class="usuario__action"><i class="fa-solid fa-trash"></i></span>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

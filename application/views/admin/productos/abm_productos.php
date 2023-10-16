@@ -55,8 +55,8 @@
     <main>
         <div class="container">
             <h2>Productos</h2>
-            <div>
-                <a href="<?=base_url('admin/new_product')?>">Nuevo producto</a>
+            <div class="producto__nuevo">
+                <a href="<?=base_url('admin/new_product')?>"><i class="fa-solid fa-plus"></i><span> Nuevo producto</span></a>
             </div>
             <?php if(!is_null($productos) && is_array($productos) &&  !empty($productos)): ?>
                 <table class="table">
@@ -88,9 +88,9 @@
                                 <td class="producto__destacado">
                                     <a href="<?=base_url('admin/highlight_product/' . $producto->producto_id)?>"><i class="<?= $producto->destacado ? 'fa-solid fa-star' : 'fa-regular fa-star' ?>"></i></a>
                                 </td>
-                                <td>
-                                    <a href="<?=base_url('admin/product/' . $producto->producto_id)?>" title="Editar"><i class="fa-solid fa-pen"></i></a>
-                                    <span onclick="delete_product(<?=$producto->producto_id?>)" title="Dar de baja"><i class="fa-solid fa-trash"></i></span>
+                                <td class="producto__actions">
+                                    <a href="<?=base_url('admin/product/' . $producto->producto_id)?>" title="Editar" class="producto__action"><i class="fa-solid fa-pen"></i></a>
+                                    <span onclick="delete_product(<?=$producto->producto_id?>)" title="Dar de baja" class="producto__action"><i class="fa-solid fa-trash"></i></span>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
