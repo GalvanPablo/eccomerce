@@ -19,16 +19,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a href="<?=base_url()?>">
                     <h1>E-Store</h1>
                 </a>
-                <ul class="navbar__items">
+                <!-- <ul class="navbar__items">
                     <li class="navbar__item"><a href="#" class="navbar__link">Inicio</a></li>
                     <li class="navbar__item"><a href="#" class="navbar__link">Productos</a></li>
-                </ul>
+                </ul> -->
             </nav>
-            <div class="navbar__auth">
-                <a href="<?=base_url('auth/login')?>">Iniciar Sesión</a>
-            </div>
-            <div class="navbar__auth">
-                <a href="<?=base_url('auth/register')?>">Registrarse</a>
+            <div class="navbar__buttons">
+                <div class="navbar__auth">
+                    <a href="<?=base_url('auth/login')?>">Iniciar Sesión</a>
+                </div>
+                <div class="navbar__auth">
+                    <a href="<?=base_url('auth/register')?>">Registrarse</a>
+                </div>
             </div>
         </div>
 	</header>

@@ -16,11 +16,6 @@ class Admin extends CI_Controller {
         $this->load->view('admin\admin.php');
     }
 
-    public function edit_profile(){
-        $this->load->view('admin\edit_admin.php');
-    }
-
-
     ///////////////////////////////////////////////////////
 
     public function clients(){
@@ -121,7 +116,7 @@ class Admin extends CI_Controller {
         $producto['nombre'] = $this->input->post('producto_nombre');
         $producto['descripcion'] = $this->input->post('producto_descripcion');
         $producto['precio'] = $this->input->post('producto_precio');
-        $producto['destacado'] = $this->input->post('producto_destacado');
+        $producto['destacado'] = 0;
         $producto['stock'] = $this->input->post('producto_stock');
         $producto['url_imagen'] = $this->input->post('producto_img');
         

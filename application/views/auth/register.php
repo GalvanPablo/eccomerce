@@ -16,7 +16,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <main>
         <?php echo form_open('auth/registrarse'); ?>
             <div class="form__container">
-                <h2>Crear cuenta</h2>
+                <div class="form__title">
+                    <a href="<?=base_url()?>"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+                    <h2>Crear cuenta</h2>
+                </div>
                 <div class="form__inputs">
                     <div class="form__group">
                         <label for="dni">DNI</label>
@@ -58,6 +61,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
                 <button type="submit" id="btn_submit" disabled>Registrarse</button>
+                <div class="form__redirect-auth">
+                    ¿Ya posee una cuenta? <a href="<?=base_url('auth/login')?>">Inicie sesión</a>
+                </div>
             </div>
         <?php echo form_close(); ?>
     </main>

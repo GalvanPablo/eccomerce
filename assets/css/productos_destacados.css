@@ -1,0 +1,53 @@
+.productosDestacados__container{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.productoDestacado{
+    height: 100%;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding: 15px;
+    border-radius: 25px;
+
+    background-color: var(--color-fondo-formulario);
+    cursor: pointer;
+}
+
+.productoDestacado:hover{
+    box-shadow: 0 0 20px 0 var(--color-neutral);
+}
+
+.productoDestacado__img{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.productoDestacado__img img {
+    width: 100%;
+}
+
+.productoDestacado__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productoDestacado__nombre {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.productoDestacado__precio{
+
+}

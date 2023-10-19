@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="<?= base_url('assets\css\base.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets\css\productos_destacados.css')?>">
 </head>
 <body>
     <header class="header">
@@ -34,12 +35,6 @@
                     </div>
 
                     <div class="profile__option">
-                        <a href="#" class="profile__btn-option">
-                            <i class="fa-solid fa-user-pen"></i>
-                            <span>Editar perfil</span>
-                        </a>
-                    </div>
-                    <div class="profile__option">
                         <a href="<?=base_url('auth/logout')?>" class="profile__btn-option">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span>Salir</span>
@@ -52,10 +47,21 @@
     <main>
         <div class="container">
             <h2>Productos destacados</h2>
-            <h3><?=$this->session->userdata('recien_registrado')?></h3>
-            <?php foreach ($productos_destacados as $producto_destacado): ?>
-                <p><?=$producto_destacado->nombre?></p>
-            <?php endforeach; ?>
+            <section class="productosDestacados__container">
+                <?php foreach ($productos_destacados as $producto_destacado): ?>
+                    <article>
+                        <a href="<?= base_url('client/product/' . $producto_destacado->producto_id)?>" class="productoDestacado">
+                            <div class="productoDestacado__img">
+                                <img src="<?=$producto_destacado->url_imagen?>" alt="">
+                            </div>
+                            <div class="productoDestacado__info">
+                                <div class="productoDestacado__nombre"><?=$producto_destacado->nombre?></div>
+                                <div class="productoDestacado__precio"><?='$' . number_format($producto_destacado->precio, 2, ',', '.')?></div>
+                            </div>
+                        </a>
+                    </article>
+                <?php endforeach; ?>
+            </section>
         </div>
 
         <div class="popUp" id="popUp_register">

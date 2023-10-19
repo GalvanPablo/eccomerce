@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="<?= base_url('assets\css\base.css')?>">
-    <link rel="stylesheet" href="<?= base_url('assets\css\abm_cliente.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets\css\detalle_cliente.css')?>">
 </head>
 <body>
     <header class="header">
@@ -36,13 +36,6 @@
                     </div>
 
                     <div class="profile__option">
-                        <a href="#" class="profile__btn-option">
-                            <i class="fa-solid fa-user-pen"></i>
-                            <!-- <i class="fa-regular fa-user"></i> -->
-                            <span>Editar perfil</span>
-                        </a>
-                    </div>
-                    <div class="profile__option">
                         <a href="<?=base_url('auth/logout')?>" class="profile__btn-option">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span>Salir</span>
@@ -60,55 +53,80 @@
                 <h2>Nuevo cliente</h2>
             <?php endif; ?>
             <?= form_open($cliente ? 'admin/update_client/' . $cliente->usuario_id : 'admin/insert_client') ?>
-                <?php if($cliente): ?>
-                    <div>
-                        <label for="cliente_id">ID</label>
-                        <input type="text" name="cliente_id" id="cliente_id" value="<?=$cliente->usuario_id?>" disabled>
+                <div class="form__container">
+                    <?php if($cliente): ?>
+                        <div hidden>
+                            <label for="cliente_id">ID</label>
+                            <input type="text" name="cliente_id" id="cliente_id" value="<?=$cliente->usuario_id?>" disabled>
+                        </div>
+                    <?php endif; ?>
+                    <div class="form__img_container">
+                        <picture onclick="open_PopUp_foto()" id="form-foto">
+                            <img src="<?= $cliente ? $cliente->url_foto : ''?>" id="cliente_img_preview">
+                            <div>
+                                <i class="fa-regular fa-image"></i>
+                            </div>
+                        </picture>
                     </div>
-                <?php endif; ?>
-                <div>
-                    <label for="cliente_dni">DNI</label>
-                    <input type="text" name="cliente_dni" id="cliente_dni"
-                        value="<?= $cliente ? $cliente->dni : ''?>"
-                        maxlength="10"
-                        required 
-                    >
-                </div>
-                <div>
-                    <label for="cliente_nombre">Nombre</label>
-                    <input type="text" name="cliente_nombre" id="cliente_nombre" 
-                        value="<?= $cliente ? $cliente->nombre : ''?>"
-                        maxlength="45"
-                        required
-                    >
-                </div>
-                <div>
-                    <label for="cliente_apellido">Apellido</label>
-                    <input type="text" name="cliente_apellido" id="cliente_apellido"
-                        value="<?= $cliente ? $cliente->apellido : ''?>"
-                        maxlength="45"
-                        required
-                    >
-                </div>
-                <div>
-                    <label for="cliente_email">Email</label>
-                    <input type="text" name="cliente_email" id="cliente_email"
-                        value="<?= $cliente ? $cliente->mail : ''?>"
-                        maxlength="255"
-                        required
-                    >
+
+                    <div class="form__group">
+                        <label for="cliente_dni">DNI</label>
+                        <input type="text" name="cliente_dni" id="cliente_dni"
+                            value="<?= $cliente ? $cliente->dni : ''?>"
+                            maxlength="10"
+                            required 
+                        >
+                    </div>
+                    
+                    <div class="form__nombre">
+                        <div class="form__group">
+                            <label for="cliente_nombre">Nombre</label>
+                            <input type="text" name="cliente_nombre" id="cliente_nombre" 
+                                value="<?= $cliente ? $cliente->nombre : ''?>"
+                                maxlength="45"
+                                required
+                            >
+                        </div>
+
+                        <div class="form__group">
+                            <label for="cliente_apellido">Apellido</label>
+                            <input type="text" name="cliente_apellido" id="cliente_apellido"
+                                value="<?= $cliente ? $cliente->apellido : ''?>"
+                                maxlength="45"
+                                required
+                            >
+                        </div>
+                    </div>
+
+                    <div class="form__group">
+                        <label for="cliente_email">Email</label>
+                        <input type="text" name="cliente_email" id="cliente_email"
+                            value="<?= $cliente ? $cliente->mail : ''?>"
+                            maxlength="255"
+                            required
+                        >
+                    </div>
+
+                    <div id="form-buttons">
+                        <button type="submit" class="form__btn" id="btn_guardar"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
+                        <div onclick="window.history.back()" class="form__btn" id="btn_cancelar"><i class="fa-solid fa-ban"></i> Cancelar</div>
+                    </div>
                 </div>
 
-                <div>
-                    <label for="cliente_foto">Foto</label>
-                    <input type="text" name="cliente_foto" id="cliente_foto"
-                        value="<?= $cliente ? $cliente->url_foto : ''?>"
-                        maxlength="255"
-                    >
+                <div class="popUp" id="popUp_foto">
+                    <div class="popUp__contenido">
+                        <div class="popUp__mensaje">
+                            <div class="form__group">
+                                <label for="cliente_foto">Foto</label>
+                                <input type="text" name="cliente_foto" id="cliente_foto" value="<?= $cliente ? $cliente->url_foto : ''?>" onkeyup="previewImg()" placeholder="url">
+                            </div>
+                        </div>
+                        <div class="popUp__actions">
+                            <div onclick="close_PopUp_foto(true)" class="popUp__action" id="popUp_save"><i class="fa-solid fa-check"></i>Aceptar</div>
+                            <div onclick="close_PopUp_foto(false)" class="popUp__action" id="popUp_cancel"><i class="fa-solid fa-ban"></i>Cancelar</div>
+                        </div>
+                    </div>
                 </div>
-
-                <button type="submit"><i class="fa-solid fa-floppy-disk"></i> Guardar</button>
-                <button onclick="window.history.back()"><i class="fa-solid fa-xmark"></i> Cancelar</button>
             <?= form_close(); ?>
         </div>
     </main>
@@ -131,6 +149,28 @@
                 menu_profile.classList.add('profile__menu--oculto');
             }
         });
+
+
+        // POPUP para la FOTO
+        const txt_url_foto = document.getElementById('cliente_foto');
+        let url_foto;
+
+        const previewImg = document.getElementById('cliente_img_preview');
+
+        const popUp_foto = document.getElementById('popUp_foto');
+        const open_PopUp_foto = () => {
+            url_foto = txt_url_foto.value;
+            popUp_foto.style.display = 'block';
+        }
+        const close_PopUp_foto = (guardar) => {
+            if(guardar){
+                url_foto = txt_url_foto.value;
+                previewImg.src = url_foto;
+            } else {
+                txt_url_foto.value = url_foto;
+            }
+            popUp_foto.style.display = 'none';
+        }
     </script>
 </body>
 </html>

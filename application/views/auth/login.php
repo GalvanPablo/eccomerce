@@ -16,7 +16,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <main>
         <?php echo form_open('auth/iniciar_sesion'); ?>
             <div class="form__container">
-                <h2>Iniciar Sesión</h2>
+                <div class="form__title">
+                    <a href="<?=base_url()?>"><i class="fa-solid fa-arrow-left"></i> Volver</a>
+                    <h2>Iniciar Sesión</h2>
+                </div>
                 <div class="form__inputs">
                     <div class="form__group">
                         <label for="email">Email</label>
@@ -33,6 +36,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                 </div>
                 <button type="submit">Iniciar sesión</button>
+                <div class="form__redirect-auth">
+                    ¿No tiene cuenta? <a href="<?=base_url('auth/register')?>">Regístrese ahora.</a>
+                </div>
             </div>
         <?php echo form_close(); ?>
     </main>
@@ -49,6 +55,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 icon.className = 'fa-solid fa-eye-slash';
             }
         }
+
+
     </script>
     <script src="https://kit.fontawesome.com/3130379173.js" crossorigin="anonymous"></script>
 </body>

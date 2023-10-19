@@ -36,13 +36,6 @@
                     </div>
 
                     <div class="profile__option">
-                        <a href="#" class="profile__btn-option">
-                            <i class="fa-solid fa-user-pen"></i>
-                            <!-- <i class="fa-regular fa-user"></i> -->
-                            <span>Editar perfil</span>
-                        </a>
-                    </div>
-                    <div class="profile__option">
                         <a href="<?=base_url('auth/logout')?>" class="profile__btn-option">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span>Salir</span>

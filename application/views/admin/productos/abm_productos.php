@@ -36,13 +36,6 @@
                     </div>
 
                     <div class="profile__option">
-                        <a href="#" class="profile__btn-option">
-                            <i class="fa-solid fa-user-pen"></i>
-                            <!-- <i class="fa-regular fa-user"></i> -->
-                            <span>Editar perfil</span>
-                        </a>
-                    </div>
-                    <div class="profile__option">
                         <a href="<?=base_url('auth/logout')?>" class="profile__btn-option">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span>Salir</span>
@@ -62,7 +55,7 @@
                 <table class="table">
                     <thead> <!-- Encabezado de la tabla -->
                         <tr>
-                            <th>ID</th>
+                            <!-- <th>ID</th> -->
                             <th>Imagen</th>
                             <th>Nombre</th>
                             <th>Descripcion</th>
@@ -75,7 +68,7 @@
                     <tbody> <!-- Cuerpo de la tabla -->
                         <?php foreach ($productos as $producto): ?>
                             <tr class="producto">
-                                <td class="producto__id"><?= $producto->producto_id ?></td>
+                                <!-- <td class="producto__id"><?= $producto->producto_id ?></td> -->
                                 <td class="producto__img">
                                     <div class="producto__img-container">
                                         <img src="<?= $producto->url_imagen ?>" alt="<?= "producto_" . $producto->producto_id ?>">

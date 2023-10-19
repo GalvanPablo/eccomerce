@@ -55,6 +55,11 @@ ul {
     width: 100%;
 }
 
+.container h2{
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
 .header {
     background-color: var(--color-fondo-encabezado);
     display: flex;
@@ -91,11 +96,21 @@ ul {
     font-size: 0.875rem;
 }
 
+.navbar__buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
 .navbar__auth {
-    background-color: var(--color-secundario);
+    background-color: var(--color-enlace-visitado);
     padding: 8px 16px;
     border-radius: 88rem;
     font-size: 0.875rem;
+}
+
+.navbar__auth:hover{
+    background-color: var(--color-primario);
 }
 
 .navbar__auth a{

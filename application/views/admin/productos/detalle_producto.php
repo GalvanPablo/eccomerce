@@ -36,12 +36,6 @@
                     </div>
 
                     <div class="profile__option">
-                        <a href="#" class="profile__btn-option">
-                            <i class="fa-solid fa-user-pen"></i>
-                            <span>Editar perfil</span>
-                        </a>
-                    </div>
-                    <div class="profile__option">
                         <a href="<?=base_url('auth/logout')?>" class="profile__btn-option">
                             <i class="fa-solid fa-arrow-right-from-bracket"></i>
                             <span>Salir</span>
@@ -176,9 +170,6 @@
             const lines = this.value.split('\n').length;
             if (lines > maxLines) {
                 this.value = this.value.split('\n').slice(0, maxLines).join('\n');
-                // document.getElementById('mensajeError').textContent = `Máximo ${maxLines} líneas permitidas.`;
-            } else {
-                // document.getElementById('mensajeError').textContent = '';
             }
         });
 
