@@ -6,7 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="<?= base_url('assets\css\base.css')?>">
-    <link rel="stylesheet" href="<?= base_url('assets\css\abm_cliente.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets\css\vista_producto.css')?>">
 </head>
 <body>
     <header class="header">
@@ -47,11 +47,19 @@
     <main>
         <div class="container">
             <?php if($producto): ?>
-                <h2><?=$producto->nombre ?></h2>
-                <p><?= nl2br($producto->descripcion) ?></p>
-                <p>$ <?= number_format($producto->precio, 2, ',', '.') ?></p>
-                <p><?= $producto->stock ?>ud.</p>
-                <img src="<?= $producto->url_imagen ?>" alt="producto_<?= $producto->producto_id ?>">
+                <div class="producto">
+                    <div class="producto__img-container">
+                        <img src="<?= $producto->url_imagen ?>" alt="producto_<?= $producto->producto_id ?>" class="producto__img">
+                    </div>
+                    <div class="producto__info">
+                        <h2 class="producto__nombre"><?=$producto->nombre ?></h2>
+                        <div class="producto__valores">
+                            <div class="producto__precio">$ <?= number_format($producto->precio, 2, ',', '.') ?></div>
+                            <div class="producto__stock">(<?= $producto->stock ?> ud. disponibles)</div>
+                        </div>
+                        <p class="producto__descripcion"><?= nl2br($producto->descripcion) ?></p>
+                    </div>
+                </div>
             <?php else: ?>
                 <h2>El producto que busca no existe</h2>
             <?php endif; ?>
