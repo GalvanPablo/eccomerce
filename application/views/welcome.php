@@ -19,10 +19,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a href="<?=base_url()?>">
                     <h1>E-Store</h1>
                 </a>
-                <!-- <ul class="navbar__items">
-                    <li class="navbar__item"><a href="#" class="navbar__link">Inicio</a></li>
-                    <li class="navbar__item"><a href="#" class="navbar__link">Productos</a></li>
-                </ul> -->
             </nav>
             <div class="navbar__buttons">
                 <div class="navbar__auth">
@@ -35,7 +31,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
 	</header>
     <main>
-        
+        <div class="hero">
+            <div>
+                <h2 class="hero__titulo">Bienvenido a <span>E-Store</span></h2>
+                <h3 class="hero__subtitulo">Nuestra primera tienda 100% online</h3>
+            </div>
+            <p><a href="<?=base_url('auth/login')?>">Inicia sesión</a> o <a href="<?=base_url('auth/register')?>">registrate</a> ahora mismo!</p>
+        </div>
     </main>
     <footer>
         

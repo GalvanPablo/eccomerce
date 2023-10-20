@@ -1,7 +1,53 @@
 main {
-    background-image: url('https://dji-official-fe.djicdn.com/cms/uploads/6380ad4dd75bf6ffaf1687363362a4de@1x.jpg');
-    background-size: contain;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://static.mercadonegro.pe/wp-content/uploads/2023/05/29154654/ecommerce-en-numeros.jpg');
+    background-size: cover;
     background-repeat: no-repeat;
 
     min-height: calc(100vh - 64px);
+}
+
+.hero {
+    height: calc(100vh - 64px - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.hero__titulo {
+    font-size: 3.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-texto-secundario);
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero__titulo span {
+    font-weight: bold;
+    color: var(--color-primario);
+}
+
+.hero__subtitulo {
+    text-align: center;
+    font-size: 1.8rem;
+    color: var(--color-neutral);
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero p{
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: var(--color-neutral);
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero p a {
+    font-weight: 400;
+    color: var(--color-texto-secundario);
+    text-shadow: 4px 4px 12px rgba(0,0,0,0.6);
+}
+
+.hero p a:hover {
+    color: var(--color-primario);
 }
