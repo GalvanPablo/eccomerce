@@ -24,7 +24,7 @@ main {
 }
 
 .form__container {
-    padding: 48px;
+    padding: 26px 48px;
     display: flex;
     flex-direction: column;
     gap: 30px;
