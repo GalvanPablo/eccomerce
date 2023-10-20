@@ -1,19 +1,22 @@
 .productosDestacados__container{
     display: flex;
     flex-direction: row;
+    justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
+
+    margin-bottom: 50px;
 }
 
 .productoDestacado{
-    height: 100%;
+    height: 275px;
     width: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
 
     padding: 15px;
-    border-radius: 25px;
+    border-radius: 15px;
 
     background-color: var(--color-fondo-formulario);
     cursor: pointer;
@@ -31,6 +34,7 @@
     align-items: center;
     overflow: hidden;
     border-radius: 10px;
+    padding: 10px;
 }
 
 .productoDestacado__img img {
@@ -44,7 +48,7 @@
 }
 
 .productoDestacado__nombre {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 600;
 }
 

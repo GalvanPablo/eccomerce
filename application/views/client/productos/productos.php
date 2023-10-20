@@ -51,10 +51,10 @@
                 <table class="table">
                     <thead> <!-- Encabezado de la tabla -->
                         <tr>
-                            <th>ID</th>
+                            <!-- <th>ID</th> -->
                             <th>Imagen</th>
                             <th>Nombre</th>
-                            <th>Descripcion</th>
+                            <!-- <th>Descripcion</th> -->
                             <th>Precio</th>
                             <th>Stock</th>
                         </tr>
@@ -62,14 +62,14 @@
                     <tbody> <!-- Cuerpo de la tabla -->
                         <?php foreach ($productos as $producto): ?>
                             <tr class="producto" onclick="viewProduct(<?= $producto->producto_id ?>)">
-                                <td class="producto__id"><?= $producto->producto_id ?></td>
+                                <!-- <td class="producto__id"><?= $producto->producto_id ?></td> -->
                                 <td class="producto__img">
                                     <div class="producto__img-container">
                                         <img src="<?= $producto->url_imagen ?>" alt="<?= "producto_" . $producto->producto_id ?>">
                                     </div>
                                 </td>
                                 <td class="producto__nombre"><?= $producto->nombre ?></td>
-                                <td class="producto__descripcion"><?= nl2br($producto->descripcion) ?></td>
+                                <!-- <td class="producto__descripcion"><?= nl2br($producto->descripcion) ?></td> -->
                                 <td class="producto__precio">$ <?= number_format($producto->precio, 2, ',', '.') ?></td>
                                 <td class="producto__stock"><?= $producto->stock ?></td>
                             </tr>

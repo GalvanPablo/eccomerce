@@ -58,7 +58,7 @@
                             <!-- <th>ID</th> -->
                             <th>Imagen</th>
                             <th>Nombre</th>
-                            <th>Descripcion</th>
+                            <!-- <th>Descripcion</th> -->
                             <th>Precio</th>
                             <th>Stock</th>
                             <th>Destacado</th>
@@ -75,7 +75,7 @@
                                     </div>
                                 </td>
                                 <td class="producto__nombre"><?= $producto->nombre ?></td>
-                                <td class="producto__descripcion"><?= nl2br($producto->descripcion) ?></td>
+                                <!-- <td class="producto__descripcion"><?= nl2br($producto->descripcion) ?></td> -->
                                 <td class="producto__precio">$ <?= number_format($producto->precio, 2, ',', '.') ?></td>
                                 <td class="producto__stock"><?= $producto->stock ?></td>
                                 <td class="producto__destacado">

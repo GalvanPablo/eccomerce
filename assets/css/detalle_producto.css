@@ -1,8 +1,9 @@
 .container {
     display: flex;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: calc(100vh - 160px);
+    height: calc(100vh - 160px); 
 }
 
 form {
@@ -10,7 +11,7 @@ form {
 }
 .form__container {
     display: grid;
-    height: 600px;
+    height: 400px;
     width: 100%;
 
     gap: 0 20px;

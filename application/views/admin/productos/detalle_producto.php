@@ -48,13 +48,12 @@
     <main>
         <div class="container">
             <?= form_open($producto ? 'admin/update_product/' . $producto->producto_id : 'admin/insert_product')?>
+                <?php if($producto): ?>
+                    <h2 class="titulo"><?=$producto->producto_id . " - " . $producto->nombre ?></h2>
+                <?php else: ?>
+                    <h2 class="titulo">Nuevo producto</h2>
+                <?php endif; ?>
                 <div class="form__container">
-                    <?php if($producto): ?>
-                        <h2 class="titulo"><?=$producto->producto_id . " - " . $producto->nombre ?></h2>
-                    <?php else: ?>
-                        <h2 class="titulo">Nuevo producto</h2>
-                    <?php endif; ?>
-                    
                     <?php if($producto): ?>
                         <div class="producto__group" hidden>
                             <label for="producto_id">ID</label>
