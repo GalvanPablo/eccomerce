@@ -45,6 +45,7 @@ class Auth extends CI_Controller {
         $usuario['apellido'] =  $this->input->post('apellido');
         $usuario['mail'] =  $this->input->post('email');
         $usuario['contraseña'] =  password_hash($this->input->post('passwd'), PASSWORD_BCRYPT);
+        $usuario['url_foto'] = $this->input->post('cliente_foto');
 
         if($this->Auth_model->register($usuario) == true){
             echo "<script>alert('Usuario creado')</script>";

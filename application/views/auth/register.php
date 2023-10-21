@@ -21,6 +21,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <h2>Crear cuenta</h2>
                 </div>
                 <div class="form__inputs">
+                    <div class="form__img_container">
+                        <picture onclick="open_PopUp_foto()" id="form-foto">
+                            <img src="<?=base_url('assets\img\avatar.png')?>" id="cliente_img_preview">
+                        </picture>
+                    </div>
                     <div class="form__group">
                         <label for="dni">DNI</label>
                         <div class="form__input__container">
@@ -65,6 +70,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     ¿Ya posee una cuenta? <a href="<?=base_url('auth/login')?>">Inicie sesión</a>
                 </div>
             </div>
+
+            <div class="popUp" id="popUp_foto">
+                <div class="popUp__contenido">
+                    <div class="popUp__mensaje">
+                        <div class="form__group">
+                            <label for="cliente_foto">Foto</label>
+                            <input type="text" name="cliente_foto" id="cliente_foto" value="<?=base_url('assets\img\avatar.png')?>" onkeyup="previewImg()" placeholder="url">
+                        </div>
+                    </div>
+                    <div class="popUp__actions">
+                        <div onclick="close_PopUp_foto(true)" class="popUp__action" id="popUp_save"><i class="fa-solid fa-check"></i>Aceptar</div>
+                        <div onclick="close_PopUp_foto(false)" class="popUp__action" id="popUp_cancel"><i class="fa-solid fa-ban"></i>Cancelar</div>
+                    </div>
+                </div>
+            </div>
+
         <?php echo form_close(); ?>
     </main>
 
@@ -78,6 +99,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 txt_passwd.setAttribute('type', 'password');
                 icon.className = 'fa-solid fa-eye-slash';
             }
+        }
+
+        // POPUP para la FOTO
+        const txt_url_foto = document.getElementById('cliente_foto');
+        let url_foto;
+
+        const previewImg = document.getElementById('cliente_img_preview');
+
+        const popUp_foto = document.getElementById('popUp_foto');
+        const open_PopUp_foto = () => {
+            url_foto = txt_url_foto.value;
+            popUp_foto.style.display = 'block';
+        }
+        const close_PopUp_foto = (guardar) => {
+            if(guardar){
+                url_foto = txt_url_foto.value;
+                previewImg.src = url_foto;
+            } else {
+                txt_url_foto.value = url_foto;
+            }
+            popUp_foto.style.display = 'none';
         }
 
 
