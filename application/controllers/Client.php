@@ -25,7 +25,7 @@ class Client extends CI_Controller {
 
         $data['productos'] = $this->Product_model->get_all();
 
-        $this->load->view('client\productos\productos.php', $data);
+        $this->load->view('client\productos\listado_productos.php', $data);
     }
 
     public function product($id){
@@ -33,6 +33,6 @@ class Client extends CI_Controller {
 
         $data['producto'] = $this->Product_model->get($id);
 
-        $this->load->view('client\productos\detalle_producto.php', $data);
+        $this->load->view('client\productos\vista_producto.php', $data);
     }
 }
