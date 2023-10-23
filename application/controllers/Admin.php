@@ -13,7 +13,11 @@ class Admin extends CI_Controller {
     }
 
 	public function index(){
-        $this->load->view('admin\admin.php');
+        $this->load->model('Product_model');
+
+        $data['productos_destacados'] = $this->Product_model->get_all_highlights();
+
+        $this->load->view('admin\admin.php', $data);
     }
 
     ///////////////////////////////////////////////////////

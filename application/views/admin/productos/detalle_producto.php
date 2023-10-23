@@ -63,17 +63,17 @@
                     
                     <div class="form__group" id="form-nombre">
                         <label for="producto_nombre">Nombre</label>
-                        <input type="text" name="producto_nombre" id="producto_nombre" value="<?= $producto ? $producto->nombre : ''?>">
+                        <input type="text" name="producto_nombre" id="producto_nombre" value="<?= $producto ? $producto->nombre : ''?>" required>
                     </div>
 
                     <div class="form__group" id="form-precio">
                         <label for="producto_precio">Precio</label>
-                        <input type="text" name="producto_precio" id="producto_precio" value="<?= $producto ? $producto->precio : ''?>">
+                        <input type="text" name="producto_precio" id="producto_precio" value="<?= $producto ? $producto->precio : ''?>" required>
                     </div>
 
                     <div class="form__group" id="form-stock">
                         <label for="producto_stock">Stock</label>
-                        <input type="text" name="producto_stock" id="producto_stock" value="<?= $producto ? $producto->stock : ''?>">
+                        <input type="text" name="producto_stock" id="producto_stock" value="<?= $producto ? $producto->stock : ''?>" required>
                     </div>
                     
                     <div class="form__group" id="form-descripcion">

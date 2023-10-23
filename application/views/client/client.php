@@ -46,7 +46,7 @@
 	</header>
     <main>
         <div class="container">
-            <h2>Productos destacados</h2>
+            <h2 class="titulo">Productos destacados</h2>
             <section class="productosDestacados__container">
                 <?php foreach ($productos_destacados as $producto_destacado): ?>
                     <article>

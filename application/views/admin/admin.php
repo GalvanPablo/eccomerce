@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="<?= base_url('assets\css\base.css')?>">
+    <link rel="stylesheet" href="<?= base_url('assets\css\productos_destacados.css')?>">
 </head>
 <body>
     <header class="header">
@@ -46,7 +47,22 @@
 	</header>
     <main>
         <div class="container">
-            
+            <h2 class="titulo">Productos destacados</h2>
+            <section class="productosDestacados__container">
+                <?php foreach ($productos_destacados as $producto_destacado): ?>
+                    <article>
+                        <a href="<?= base_url('client/product/' . $producto_destacado->producto_id)?>" class="productoDestacado">
+                            <div class="productoDestacado__img">
+                                <img src="<?=$producto_destacado->url_imagen?>" alt="">
+                            </div>
+                            <div class="productoDestacado__info">
+                                <div class="productoDestacado__nombre"><?=$producto_destacado->nombre?></div>
+                                <div class="productoDestacado__precio"><?='$' . number_format($producto_destacado->precio, 2, ',', '.')?></div>
+                            </div>
+                        </a>
+                    </article>
+                <?php endforeach; ?>
+            </section>
         </div>
     </main>
     <footer>
