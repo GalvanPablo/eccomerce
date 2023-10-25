@@ -12,11 +12,11 @@
     <header class="header">
         <div class="header__container">
             <nav class="navbar">
-                <a href="<?=base_url('client')?>">
+                <a href="<?=base_url($this->session->userdata('rol') != 1 ? 'client' : 'admin')?>">
                     <h1>E-Store</h1>
                 </a>
                 <ul class="navbar__items">
-                    <li class="navbar__item"><a href="<?=base_url('client\products')?>" class="navbar__link">Productos</a></li>
+                    <li class="navbar__item"><a href="<?=base_url($this->session->userdata('rol') != 1 ? 'client' : 'admin' . '\products')?>" class="navbar__link">Productos</a></li>
                 </ul>
             </nav>
             <div class="profile">

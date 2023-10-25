@@ -61,7 +61,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <label for="passwd2">Confirmar contraseña</label>
                         <div class="form__input__container">
                             <input type="password" name="passwd2" id="passwd2" class="form__input" onchange="validate_passwd()" required autocomplete="false">
-                            <span id="passwd_visibility" onclick="passwd_visibility()"><i class="fa-solid fa-eye-slash" id="passwd_icon"></i></span>
+                            <span id="passwd2_visibility" onclick="passwd2_visibility()"><i class="fa-solid fa-eye-slash" id="passwd2_icon"></i></span>
                         </div>
                     </div>
                 </div>
@@ -92,6 +92,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script>
         const passwd_visibility = () => {
             const icon = document.getElementById('passwd_icon');
+            const txt_passwd = document.getElementById('passwd');
+            if(txt_passwd.getAttribute('type') == 'password'){
+                txt_passwd.setAttribute('type', 'text');
+                icon.className = 'fa-solid fa-eye';
+            } else {
+                txt_passwd.setAttribute('type', 'password');
+                icon.className = 'fa-solid fa-eye-slash';
+            }
+        }
+
+        const passwd2_visibility = () => {
+            const icon = document.getElementById('passwd2_icon');
+            const txt_passwd = document.getElementById('passwd2');
             if(txt_passwd.getAttribute('type') == 'password'){
                 txt_passwd.setAttribute('type', 'text');
                 icon.className = 'fa-solid fa-eye';

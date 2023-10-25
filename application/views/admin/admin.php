@@ -51,7 +51,7 @@
             <section class="productosDestacados__container">
                 <?php foreach ($productos_destacados as $producto_destacado): ?>
                     <article>
-                        <a href="<?= base_url('client/product/' . $producto_destacado->producto_id)?>" class="productoDestacado">
+                        <a href="<?= base_url('admin/producto/' . $producto_destacado->producto_id)?>" class="productoDestacado">
                             <div class="productoDestacado__img">
                                 <img src="<?=$producto_destacado->url_imagen?>" alt="">
                             </div>

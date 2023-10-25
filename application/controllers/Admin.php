@@ -107,6 +107,15 @@ class Admin extends CI_Controller {
         $this->load->view('admin\productos\detalle_producto.php', $data);
     }
 
+    public function producto($id){
+        $this->load->model('Product_model');
+        $this->load->helper('form');
+
+        $data['producto'] = $this->Product_model->get($id);
+
+        $this->load->view('client\productos\vista_producto.php', $data);
+    }
+
     public function new_product(){
         $this->load->helper('form');
 

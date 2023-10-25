@@ -5,7 +5,9 @@
     background-color: var(--color-fondo-formulario);
     text-align: left;
 
-    border: none;
+    /* border: none; */
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
 .producto__nuevo {
@@ -18,14 +20,37 @@
 }
 
 .producto {
-    height: 72px;
+    padding: 15px 10px;
+    cursor: pointer;
+    border-spacing: 10px;
 }
+
+.producto td {
+    border: 2px solid transparent;
+}
+
+.producto:hover td {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+.producto:hover td:first-child {
+    border-left: 2px solid black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.producto:hover td:last-child {
+    border-right: 2px solid black;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
 
 .producto__img-container {
     height: 128px;
     width: 128px;
     overflow: hidden;
     border-radius: 5px;
+    padding: 15px;
 }
 
 .producto__img-container img {

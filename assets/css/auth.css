@@ -69,7 +69,8 @@ main {
     background-color: white;
 }
 
-#passwd_visibility {
+#passwd_visibility,
+#passwd2_visibility {
     color: gray;
     cursor: pointer;
 }
@@ -87,14 +88,6 @@ main {
 .form__redirect-auth a:hover {
     color: var(--color-primario);
 }
-
-
-
-
-
-
-
-
 
 .form__img_container {
     display: flex;
