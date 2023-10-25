@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1:3308
--- Tiempo de generación: 19-10-2023 a las 23:43:31
+-- Tiempo de generación: 25-10-2023 a las 02:42:26
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.0.28
 
@@ -43,12 +43,16 @@ CREATE TABLE `producto` (
 --
 
 INSERT INTO `producto` (`producto_id`, `nombre`, `descripcion`, `precio`, `stock`, `url_imagen`, `destacado`, `baja`) VALUES
-(1, 'AGRAS T40', 'Drone DJI Agrícola Fumigador\r\nCapacidad: 70 L\r\n3\r\n4', 150000, 11, 'https://djistore.com.ar/wp-content/uploads/2022/10/f5e1a2e2dc34c2379fb04ed479df1d6e.png', b'1', b'0'),
-(2, 'Gigabyte B560m Aorus', 'Motherboard Gigabyte B560m Aorus Pro\r\n11ma Generación', 190000, 5, 'https://mla-s1-p.mlstatic.com/971557-MLA46012928724_052021-F.jpg', b'1', b'0'),
-(3, 'Osmo Mobile 6', '3 Ejes de estabilización\r\nLanzamiento rápido\r\nPortátil y plegable\r\nActive Track 6.0\r\nVarilla de extensión incorporada', 250000, 5, 'https://www5.djicdn.com/cms/uploads/07378296d58d982d9cf104dbe587cb05.png', b'1', b'0'),
-(4, 'Logitech G29', 'G29 Driving Force es el volante de simulación de carreras definitivo para los juegos de PlayStation®4, PlayStation®3 y PC más recientes.', 399.99, 2, 'https://http2.mlstatic.com/D_NQ_NP_896552-MLA45809460554_052021-O.webp', b'1', b'0'),
-(5, 'Logitech Astro A50', 'Los auriculares Astro A50 cuentan con unidades de diafragma de 40 mm que garantizan una respuesta en frecuencia de 20 Hz a 20 kHz, lo que se traduce en un sonido envolvente y detallado. No te preocupes por quedarte sin batería en medio de una partida, ya ', 350000, 6, 'https://http2.mlstatic.com/D_NQ_NP_960912-MLA54101366589_032023-O.webp', b'1', b'0'),
-(6, 'Logitech G502 Lightspeed ', 'Mouse de Logitech G Series\r\nEs inalámbrico.\r\nIncluye batería recargable.\r\nPosee rueda de desplazamiento.\r\nCon luces para mejorar la experiencia de uso.\r\nCuenta con interruptor de ahorro de energía.\r\nCon sensor óptico.\r\nResolución de 25600dpi.', 179.999, 265, 'https://http2.mlstatic.com/D_NQ_NP_943772-MLA40076329951_122019-O.webp', b'1', b'0');
+(7, 'SSD WD Green 480GB', 'SSD Western Digital Green 480gb\r\n2.5\" SATA III\r\nÚtil para guardar programas y documentos con su capacidad de 480 GB.\r\nApto para PC y Notebook.', 49999, 47, 'https://http2.mlstatic.com/D_NQ_NP_758655-MLA40254271668_122019-O.webp', b'1', b'0'),
+(8, 'Logitech Astro A50', 'Sonido envolvente y detallado con diafragma de 40 mm\r\nLibertad de movimiento gracias a su alcance inalámbrico de 15 m\r\nMicrófono incorporado para comunicación clara con compañeros\r\nBatería de larga duración: hasta 15 horas de uso continuo', 421699, 5, 'https://http2.mlstatic.com/D_NQ_NP_960912-MLA54101366589_032023-O.webp', b'1', b'0'),
+(9, 'Amd Ryzen 7 5700g', 'Procesador Gamer Amd Ryzen 7 5700g\r\n8 Núcleos 4.6ghz\r\nSocket AM4', 379999, 11, 'https://http2.mlstatic.com/D_NQ_NP_940934-MLU47593217192_092021-O.webp', b'1', b'0'),
+(10, 'Router Tp-link Tl-wr940n', 'Router Wifi Tp-link Tl-wr940n 450mbps\r\nFunciones: Access point - Range extender - Router\r\nVelocidad: 450 Mbps\r\nFrecuencia: 2.4 GHz (Banda única)', 29999, 10, 'https://http2.mlstatic.com/D_NQ_NP_798416-MLA31581829080_072019-O.webp', b'1', b'0'),
+(11, 'Parlante JBL Charge Essential 2', 'Parlante JBL Charge Essential 2 portátil\r\nResistente al agua\r\n40 watts de potencia\r\nDuración 7hs', 135000, 25, 'https://http2.mlstatic.com/D_NQ_NP_710468-MLA52625469333_112022-O.webp', b'0', b'0'),
+(12, 'Camara De Seguridad Ip Gadnic', 'Cuenta con Nigth visión\r\nMicrófono incorporado\r\nResolución: Full HD 1080P\r\nActivación por Movimiento\r\nColor blanco', 40500, 31, 'https://http2.mlstatic.com/D_NQ_NP_956892-MLA72100953198_102023-O.webp', b'0', b'0'),
+(13, 'Mini Proyector Gadnic', 'Resolucion 1080p\r\n2500 Lumens\r\nTamaño de imagen: 50\" - 150\"\r\nConexiones HDMI - USB', 120000, 6, 'https://http2.mlstatic.com/D_NQ_NP_986018-MLA54195107838_032023-O.webp', b'0', b'0'),
+(14, 'Notebook Lenovo Ideapad', 'Amd Ryzen 7 5700U 4.3 GHz\r\n8gb Ram DDR4\r\n512gb de almacenamiento SSD\r\nTamaño de la pantalla: 15.6\"\r\nWindows 11', 770599, 3, 'https://http2.mlstatic.com/D_NQ_NP_924251-MLA71922954918_092023-O.webp', b'1', b'0'),
+(15, 'Xiaomi Redmi Buds 3 Lite', 'Sonido de alta calidad con tecnología TWS\r\nConexión Bluetooth 5.2 estable y rápida\r\nResistente al agua y al polvo (IP54)\r\nBatería de 5 horas y estuche de carga incluido', 24500, 16, 'https://http2.mlstatic.com/D_NQ_NP_603430-MLA52223526412_102022-O.webp', b'1', b'0'),
+(16, 'Xiaomi Redmi Watch 2 Lite', 'Pantalla táctil LCD TFT de 1.55\"\r\nResiste hasta 50m bajo el agua.\r\nGPS Integrado\r\nBatería de 10 días de duración\r\nSensores incluidos: acelerómetro, giroscopio, sensor óptico de frecuencia cardíaca ppg, pulsioxímetro, sensor magnético.', 59299, 124, 'https://http2.mlstatic.com/D_NQ_NP_942099-MLA49011470720_022022-O.webp', b'0', b'0');
 
 -- --------------------------------------------------------
 
@@ -92,12 +96,10 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usuario_id`, `dni`, `nombre`, `apellido`, `mail`, `contraseña`, `rol_rol_id`, `url_foto`, `baja`) VALUES
-(1, '44256447', 'Pablo', 'Galvan', 'pablogalvan.015@gmail.com', '$2y$10$Z/rBlJgr0GgaRjJp/p3Bn.s/RPwwnwA3Lo4WUIhVIuFkWliPZgimq', 1, 'https://avatars.githubusercontent.com/u/103456849?v=4', b'0'),
-(2, '40678935', 'Noelia', 'Flores', 'noe_flores@gmail.com', '$2y$10$Nw555MMzuar/XNPVUyI4eOK821shKuggMkVi99Lpk5RLGXcZ7YHNS', 2, 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29uYXxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80', b'0'),
-(3, '38957112', 'Jose', 'Hernandez', 'jhernadez@hotmail.com', '$2y$10$pnFJpqocBIBkSwcFd13aGOVEF8lwozW08OFsWKKVa5rxRW.j8aTdS', 2, 'https://cmsresources.elempleo.com/co/assets/backend/styles/770x513/public/fotos/noticias/24476418_l.jpg', b'0'),
-(6, '40621987', 'Emiliano', 'Galvan', 'galvan@gmail.com', '$2y$10$VfDsTW0u2n4lEUCObZJHn.Fk63NbkKH45H0NkyjIgghg5F4/fSNR6', 2, NULL, b'0'),
-(13, '17512186', 'Norma', 'De Volder', 'norma@hotmail.com', '$2y$10$1K1wuwHDkXt9mjIdNSa12ey7qpKIxd9kGvDQsa7XYPf18kX/ltHXa', 2, NULL, b'0'),
-(14, '43500100', 'Lorena', 'Ceballos', 'lore@gmail.com', '$2y$10$x7/xLBSvXkCPeTgOPj1W6.JkuEbeiwkS83cZaShf8n4h8Kq.bA6PO', 2, 'https://images.pexels.com/photos/733872/pexels-photo-733872.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500', b'0');
+(17, '40000000', '123', 'Admin', 'admin@correo.com', '$2y$10$THga8EoM1oNLH439OfnhFuQRbbGgwB0IX6Hbg/d2DZZfopdB1RnEK', 1, 'https://png.pngtree.com/png-vector/20220824/ourlarge/pngtree-engineer-admin-icon-service-vector-png-image_33420934.png', b'0'),
+(18, '44256447', 'Pablo Ariel', 'Galvan', 'pablogalvan.015@gmail.com', '$2y$10$yR90lnyD8Cg11itvNZ.cweTFog83CqjSjoE09GDHPwgFEd4BSmasm', 2, 'https://avatars.githubusercontent.com/u/103456849?v=4', b'0'),
+(19, '40500000', 'Miguel', 'Lanzeni', 'lanzeni@correo.com', '$2y$10$SPkQCahdglHYcdBy82Ktn.mdQkgHlDEdDgJ78tycShdgGefZcRdHe', 2, 'http://localhost/ecommerce/assets\\img\\avatar.png', b'0'),
+(20, '40600000', 'Elida', 'Leoni', 'leoni@correo.com', '$2y$10$AQwggy05gychqLLbDcLb4eqGDAIY.vOeiuEsHyywI.VsKyvl/lLXm', 2, 'http://localhost/ecommerce/assets\\img\\avatar.png', b'0');
 
 --
 -- Índices para tablas volcadas
@@ -132,7 +134,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `producto`
 --
 ALTER TABLE `producto`
-  MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `producto_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `rol`
@@ -144,7 +146,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `usuario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas
