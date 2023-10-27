@@ -96,7 +96,7 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usuario_id`, `dni`, `nombre`, `apellido`, `mail`, `contraseña`, `rol_rol_id`, `url_foto`, `baja`) VALUES
-(17, '40000000', '123', 'Admin', 'admin@correo.com', '$2y$10$THga8EoM1oNLH439OfnhFuQRbbGgwB0IX6Hbg/d2DZZfopdB1RnEK', 1, 'https://png.pngtree.com/png-vector/20220824/ourlarge/pngtree-engineer-admin-icon-service-vector-png-image_33420934.png', b'0'),
+(17, '40000000', '123', 'Admin', 'admin@correo.com', '$2y$10$THga8EoM1oNLH439OfnhFuQRbbGgwB0IX6Hbg/d2DZZfopdB1RnEK', 1, 'http://localhost/ecommerce/assets\\img\\avatar.png', b'0'),
 (18, '44256447', 'Pablo Ariel', 'Galvan', 'pablogalvan.015@gmail.com', '$2y$10$yR90lnyD8Cg11itvNZ.cweTFog83CqjSjoE09GDHPwgFEd4BSmasm', 2, 'https://avatars.githubusercontent.com/u/103456849?v=4', b'0'),
 (19, '40500000', 'Miguel', 'Lanzeni', 'lanzeni@correo.com', '$2y$10$SPkQCahdglHYcdBy82Ktn.mdQkgHlDEdDgJ78tycShdgGefZcRdHe', 2, 'http://localhost/ecommerce/assets\\img\\avatar.png', b'0'),
 (20, '40600000', 'Elida', 'Leoni', 'leoni@correo.com', '$2y$10$AQwggy05gychqLLbDcLb4eqGDAIY.vOeiuEsHyywI.VsKyvl/lLXm', 2, 'http://localhost/ecommerce/assets\\img\\avatar.png', b'0');
