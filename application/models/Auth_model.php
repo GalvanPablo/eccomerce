@@ -23,6 +23,19 @@ class Auth_model extends CI_Model {
 
 
     public function register($usuario){
+        $this->db->select('*');
+        $this->db->from('usuario');
+        $this->db->where('dni', $usuario['dni']);
+
+        if($this->db->get()->result() != null)
+        return -1;
+        $this->db->select('*');
+        $this->db->from('usuario');
+        $this->db->where('mail', $usuario['mail']);
+
+        if($this->db->get()->result() != null)
+        return -2;
+
         $usuario['rol_rol_id'] = 2; // Cliente
         $this->db->insert('usuario', $usuario);
 

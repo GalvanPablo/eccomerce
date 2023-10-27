@@ -47,7 +47,8 @@ class Auth extends CI_Controller {
         $usuario['contraseña'] =  password_hash($this->input->post('passwd'), PASSWORD_BCRYPT);
         $usuario['url_foto'] = $this->input->post('cliente_foto');
 
-        if($this->Auth_model->register($usuario) == true){
+        $registro = $this->Auth_model->register($usuario);  
+        if($registro == 1){
             echo "<script>alert('Usuario creado')</script>";
             $user = $this->Auth_model->login($this->input->post('email'), $this->input->post('passwd'));
             if($user){
@@ -62,9 +63,18 @@ class Auth extends CI_Controller {
                 redirect('client');
             } else {
                 echo "<script>alert('Error al iniciar sesión con el nuevo usuario')</script>";
+                // redirect(base_url('auth/login'));
+                $this->load->view('auth/login.php');
             }
         } else {
-            echo "<script>alert('Error al crear el usuario')</script>";
+            if($registro == -1){
+                echo "<script>alert('El DNI ya se encuentra en uso')</script>";
+            } else if($registro == -2){
+                echo "<script>alert('El mail ya se encuentra en uso')</script>";
+            } else {
+                echo "<script>alert('Error al crear el usuario')</script>";
+            }
+            $this->load->view('auth/register.php');
         }
     }
 
